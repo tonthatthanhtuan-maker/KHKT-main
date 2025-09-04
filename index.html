@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phụ lục NCKH - Tôn Thất Thanh Tuấn,11A16,THPT Phú Nhuận</title>
+  <style>
+    :root {
+      --maxw: 900px;
+      --accent: #0a66c2;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+    }
+    body {
+      margin: 0; 
+      font-family: "Segoe UI", Roboto, 'Times New Roman';
+      background: var(--bg); 
+      color: #111827;
+    }
+    .container { max-width: var(--maxw); margin: auto; padding: 20px; }
+    header, main, footer {
+      background: white; 
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+/*=============================================================================*/
+    header { text-align: center; padding: 24px; } /* Font chữ tiêu đề */
+    header h1 { margin: 12px 0 8px; font-size: 50px; color: var(--accent);font-weight:bold; } /* Giáo viên hướng dẫn */
+    header p { margin: 4px 0; color: var(--muted); font-size: 22px; font-weight: bold; } /*Dòng chữ Tác giả*/
+
+    /* Ảnh bìa giữ tỉ lệ 1920x1080 */
+    .hero img { 
+      width: 100%;
+      aspect-ratio: 3/1.25; /* Giữ tỉ lệ 1920x1080 */
+      object-fit: cover;  /* Cắt vừa khung */
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+/*=============================================================================*/
+    .toc { padding:8px 12px; } /* Khoang cách bên trong mục lục */
+    .toc h2 { 
+      margin-top: 0;       /* bỏ khoảng cách phía trên của tiêu đề Mục lục */
+      font-size: 30px;     /* cỡ chữ tiêu đề "Mục lục" */
+      color: #1f2937;
+      text-align: center;/* màu chữ (lấy từ biến accent: xanh dương) */
+    }
+
+    .toc ol { 
+      padding-left: 20px;  /* thụt vào bên trái danh sách số thứ tự */
+      margin: 0;           /* bỏ khoảng cách mặc định */
+      font-size: 20px; 
+      font-weight: bold;    /* cỡ chữ của danh sách (các mục) */
+    }
+/*=============================================================================*/
+    /* Accordion style cho mọi mục */
+    .accordion {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+    .accordion-header {
+      background: #f3f4f6;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      color: #1f2937;
+    }
+    .accordion-header:hover { background: #e5e7eb; }
+    .accordion-header span { transition: transform 0.3s; }
+    .accordion-header.open span { transform: rotate(90deg); }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: white;
+      padding: 0 16px;
+    }
+    .accordion-content.open { padding: 16px; }
+    p { line-height: 2; }
+
+    figure { text-align: center; margin: 16px 0; } /*Canh giữa khung ảnh và tạo khoảng trên/dưới. */
+    figure img { width: 100%; border-radius: 8px; }
+    figcaption { font-size: 20px; color: var(--muted); margin-top: 6px; font-weight: bold;line-height: 1.8; }
+
+    footer { padding: 16px; text-align: center; color: var(--muted); font-size: 14px; }
+    .toc ol li a {
+  font-size: 22px;   /* chỉnh cỡ chữ */
+  color: #0a66c2;    /* màu chữ xanh dương */
+  text-decoration: none; /* bỏ gạch dưới */
+  font-family: 'Times New Roman';
+}
+
+.toc ol li a:hover {
+  text-decoration: underline; /* khi hover thì có gạch dưới */
+}
+.accordion-content {
+  text-align: justify;   /* canh đều 2 bên */
+}
+.accordion-content h3 {
+  font-size: 20px;     /* chỉnh cỡ chữ */
+  font-weight: bold;
+  font-family: "Times New Roman";
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;    
+}
+
+.accordion-content p {
+  font-size: 20px;     /* chỉnh cỡ chữ */
+  font-weight: bold;   /* in đậm */
+  font-family: "Times New Roman"; /* đổi font chữ */
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;
+  margin-left: 20px;    /* tăng khoảng cách dòng để dễ đọc */
+}
+.accordion-content p1 {
+  font-size: 20px;     /* chỉnh cỡ chữ */  
+  font-family: "Times New Roman"; /* đổi font chữ */
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;    /* tăng khoảng cách dòng để dễ đọc */
+  margin-left: 20px; /* Thục đầu dòng */
+  text-align: justify
+}
+.accordion-content p.indent {
+  font-size: 20px;     
+  font-family: "Times New Roman";
+  color: #111827;
+  line-height: 1.8;
+  margin-left: 25px; 
+  text-align: justify;
+  font-weight: normal; /* để đoạn văn không bị đậm toàn bộ */
+  margin-top: 12px;    /* thêm khoảng cách trên */
+  margin-bottom: 12px;
+  text-indent: 25px; /* thêm khoảng cách dưới */
+}
+.accordion-content e.indent {
+  font-size: 20px;     
+  font-family: "Times New Roman";
+  color: #111827;
+  line-height: 1.8;
+  margin-left: 25px; 
+  font-weight: normal; /* để đoạn văn không bị đậm toàn bộ */
+  margin-top: 12px;    /* thêm khoảng cách trên */
+  margin-bottom: 12px;
+  text-indent: 25px; /* thêm khoảng cách dưới */
+}
+.responsive-img {
+  width: 500px;       /* mặc định (máy tính) */
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {   /* khi màn hình nhỏ hơn 600px (điện thoại) */
+  .responsive-img {
+    width: 100%;      /* co vừa màn hình */
+    max-width: 100%;  /* không vượt quá khung */
+  }
+}
+
+.responsive-video {
+  width: 100%;        /* chiếm hết khung chứa */
+  height: auto;       /* giữ nguyên tỉ lệ */
+  max-width: 600px;   /* trên PC chỉ rộng tối đa 600px */
+  display: block;
+  margin: 0 auto;     /* căn giữa */
+}
+.toc-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  margin: 20px 0; /* thêm khoảng cách trên/dưới cho cân đối */
+}
+
+
+/*=============================================================================*/
+
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <!-- Thay đường dẫn ảnh bìa tại đây -->
+        <img src="image\bìa.png" alt="Ảnh mở đầu" />
+      </div>
+      <h1>Hệ thống hỗ trợ người có vấn đề về mắt và người cao tuổi</h1>
+      <p>Giáo viên hướng dẫn: Thầy Cao Nguyễn Nam Hiền</p>
+      <p>Tác giả: Tôn Thất Thanh Tuấn, Ngô Khang Huy – 11A16 – THPT Phú Nhuận – 2025</p>
+    </header>
+<!-- Mục lục -->
+    <section class="toc">
+      <h2>Mục lục</h2>
+      <ol id="toc-list"></ol>
+    </section>
+<h2 class="toc-title">Phụ Lục</h2>
+    <main>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- Mục 1 -->
+      <div class="accordion" id="muc-1">
+        <div class="accordion-header">Mở đầu <span>▶</span></div>
+        <div class="accordion-content">
+          <h3>1. Lí do chọn đề tài</h3>
+          <p1>Đôi mắt được công nhận là một bộ phận thiết yếu bậc nhất của cơ thể, có vai trò không thể thay thế trong cuộc sống hằng ngày. 
+          Khả năng quan sát môi trường xung quanh do cơ quan thị giác mang lại là cơ sở để con người tiếp nhận thông tin, lý giải hành vi, và đặc biệt quan trọng là di chuyển một cách an toàn và hiệu quả.
+          Sự suy giảm chức năng thị giác hoặc tuổi tác có thể gây ra những thách thức đáng kể, ảnh hưởng trực tiếp đến khả năng tự chủ và chất lượng cuộc sống của mỗi cá nhân.</p1>
+          <p>Thực trạng số người suy giảm thị lực và người cao tuổi:</p>
+          <figure>
+            <img src="image\chart.png" alt="" />
+            <figcaption>Hình ảnh thực trạng số người suy giảm thị lực và người cao tuổi</figcaption>
+          </figure>
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+      <!-- Mục 2 -->
+      <div class="accordion" id="muc-2">
+        <div class="accordion-header">Chương 1. Cơ sở lý thuyết <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này giới thiệu tổng quan về tình hình nghiên cứu và các lý thuyết cơ bản về vận hành camera, tìm hiểu về các đặc trưng của hành vi của con người,
+cơ sở dữ liệu ảnh vật, người, phương pháp thực hiện, phân loại vật tĩnh và vật động, 
+v.v… Những kiến thức cơ bản này là tiền đề để áp dụng vào bài toán làm thiết bị cảm biến hỗ trợ người có vấn đề về mắt và người cao tuổi.
+</p1>
+        <h3>1.1. Kiến trúc mạng Nơ–ron tích chập (Convolutional Neural Network)</h3>
+          <figure>
+            <img src="image\1.1.png" alt="" class="responsive-img" />
+            <img src="image\1.1b.png" alt=""class="responsive-img"/>
+            <figcaption>Hình  1.1.1 Mô hình CNN sử dụng cho bài toán phân loại (trong phụ lục)</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.2. Kiến trúc mô hình mạng YOLOv11</h3>
+          <figure>
+            <img src="image\1.2.1.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.2.1 Quy trình hoạt động của mạng YOLO</figcaption>
+            <img src="image\1.2.2.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.2.2 Quy trình hoạt động của mạng YOLO</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.3. Cách thức hoạt động của YOLOv11</h3>
+          <figure>
+            <img src="image\1.3.1.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.3.1 Hoạt động của YOLO</figcaption>
+            <img src="image\1.3.2.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.3.2. Các giá trị tham số của bounding box trong lưới ô</figcaption>
+            <img src="image\1.3.3.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.3.3 Hình ảnh cách trích xuất vector đặc trưng của YOLO</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.4. Tiềm năng của phân loại ảnh bằng các mô hình máy học và camera</h3>
+          <figure>
+            <img src="image\1.4.1.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.4.1 Phân loại hình ảnh ung thư vú dựa trên lý thuyết YOLO</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.5. Các bước phân loại ảnh bằng mô hình học sâu</h3>
+          <figure>            
+            <img src="image\1.5.1.png" alt="" style="width:100px; height:auto;"/>
+            <img src="image\1.5.1b.png" alt="" style="width:100px; height:auto; "/>
+            <figcaption>Hình 1.5.1 So sánh quy trình phân loại của mô hình phân loại học máy truyền thống với học sâu </figcaption>
+            <img src="image\1.5.2.png" alt="" style="width:200px; height:auto; display:block; margin-left:auto; margin-right:auto;"/>
+            <figcaption>Hình 1.5.2 Các bước phân loại ảnh </figcaption>
+            <img src="image\1.5.3.png" alt="" class="responsive-img" />
+            <figcaption>Hình 1.5.3 Trích xuất đặc trưng và phân loại ảnh với CNN  </figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.8. Cách đo khoảng cách giữa đối tượng và vật bằng tia laser</h3>
+          <figure>
+            <img src="image\1.8.1.jpg" alt="" class="responsive-img" />
+            <figcaption>Hình 1.8.1 Mô phỏng việc đo khoảng cách của tia laser </figcaption>
+            <img src="image\1.8.2.jpg" alt="" class="responsive-img"/>
+            <figcaption>Hình 1.8.2 Mô phỏng việc đo khoảng cách của tia laser tới thiết bị</figcaption>
+          </figure>          
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.9. Cách đo khoảng cách giữa đối tượng và vật bằng thuật toán</h3>
+          <figure>
+            <img src="image\1.9.1.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 1.9.1 Minh họa cách đo khoảng cách giữa đối tượng và vật bằng thuật toán</figcaption>
+          </figure>          
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <!-- Mục 3 -->
+      <div class="accordion" id="muc-3">
+        <div class="accordion-header">Chương 2. Thiết kế mô hình <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này cho chúng ta thấy mô hình ở môi trường 3D được thiết kế như thế nào trước khi được in nhựa ra.</p1>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>2.6. Ảnh thiết kế sản phẩm</h3>
+          <figure>
+            <img src="image\2.6.1.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 2.6.1 Mẫu thiết kế 1, sử dụng hệ thống sống âm, camera (Góc nhìn ngang)</figcaption>
+            <img src="image\2.6.2.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 2.6.2 Mẫu thiết kế 1, sử dụng hệ thống sống âm, camera (Góc nhìn thẳng)</figcaption>
+            <img src="image\2.6.3.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 2.6.3 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên phải)</figcaption>            
+            <img src="image\2.6.4.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 2.6.4 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên trái)</figcaption>               
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>2.7 Sơ đồ lắp ráp</h3>
+          <figure>
+            <img src="image\2.7.1a.png" alt=""  class="responsive-img"/>
+            <img src="image\2.7.1b.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 2.7.1 Sơ đồ lắp ráp camera</figcaption>
+            <img src="image\2.7.2.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 2.7.2 Sơ đồ lắp ráp laser measurement</figcaption>            
+          </figure>          
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->      
+      <!-- Mục 4 -->
+      <div class="accordion" id="muc-4">
+        <div class="accordion-header">Chương 3. Thực nghiệm và đánh giá <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này cho chúng ta thấy mô hình ở môi trường 3D được thiết kế như thế nào trước khi được in nhựa ra. </p1>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->      
+        <h3>3.3. Các bước chi tiết thực hiện</h3>
+          <figure>
+            <img src="image\3.3.1.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 3.3.1 Hình ảnh được lưu phân tích vật</figcaption>
+            <img src="image\3.3.2a.png" alt="" class="responsive-img"/>
+            <img src="image\3.3.2b.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.3.2 Hình ảnh miêu tả độ nhận diện của vật</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->      
+        <h3>3.4. Kết quả thực hiện</h3>
+          <figure>
+            <img src="image\3.4.1.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.4.1 Hình ảnh nhận diện con người thông qua việc train AI</figcaption>
+            <img src="image\3.4.2.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.4.2 Hình ảnh nhận diện con người thông qua việc huấn luyện AI</figcaption>
+            <img src="image\3.4.3a.png" alt=""  class="responsive-img"/>
+            <img src="image\3.4.3b.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.4.3 Hình ảnh nhận diện vật được huấn luyện</figcaption>
+            <img src="image\3.4.4a.png" alt=""  class="responsive-img"/>
+            <img src="image\3.4.4b.png" alt=""  class="responsive-img"/>
+            <img src="image\3.4.4c.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.4.4 Miêu tả đo khoảng cách từ vật tới camera</figcaption>
+            <img src="image\3.4.5.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.4.5 Đo độ sau của ảnh để tính khoảng cách vật</figcaption>
+          </figure>          
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->      
+        <h3>3.7. Kết quả thực nghiệm phần nhận diện vật và người ở môi trường ổn định</h3>
+          <figure>
+            <img src="image\3.7.1.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.7.1 Biểu đồ thể hiện hiệu xuất mô hình ở môi trường ổn định</figcaption>
+            <img src="image\3.7.2.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.7.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường ổn định</figcaption>            
+            <img src="image\3.7.3.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.7.3 Thống kê độ nhận diện các vật sau khi qua kiểm tra ở môi trường ổn định</figcaption>
+            <img src="image\3.7.4.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.7.4 Thống kê độ nhận diện các vật sau khi qua kiểm chứng ở môi trường ổn định</figcaption>
+            <img src="image\3.7.5.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.7.5 Biểu đồ thể hiện độ sai lệch giữa dự đoán và thực tế của vật ở môi trường ổn định</figcaption>
+            <img src="image\3.7.6.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.7.6 Biểu đồ thể hiện độ sai lệch giữa nhãn phân loại dự đoán và nhãn thực tế của đối tượng  ở môi trường ổn định</figcaption>
+            <img src="image\3.7.7.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.7.7 Biểu đồ thể hiện mức độ chính xác khi mô hình dự đoán có hay không có đối tượng trong một ô ở môi trường ổn định</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>3.9 Kết quả thực nghiệm phần nhận diện vật và người ở môi trường tối</h3>
+          <figure>
+            <img src="image\3.9.1.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.9.1 Biểu đồ thể hiện hiệu xuất mô hình ở môi trường tối</figcaption>
+            <img src="image\3.9.2.png" alt=""  class="responsive-img"/>
+            <figcaption>Hình 3.9.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường tối</figcaption>            
+            <img src="image\3.9.3.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.9.3 Thống kê độ nhận diện các vật sau khi qua kiểm tra ở môi trường tối</figcaption>
+            <img src="image\3.9.4.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.9.4 Thống kê độ nhận diện các vật sau khi qua kiểm chứng ở môi trường tối</figcaption>
+            <img src="image\3.9.5.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.9.5 Biểu đồ thể hiện độ sai lệch giữa dự đoán và thực tế của vật ở môi trường tối</figcaption>
+            <img src="image\3.9.6.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.9.6 Biểu đồ thể hiện độ sai lệch giữa nhãn phân loại dự đoán và nhãn thực tế của đối tượng ở môi trường tối</figcaption>
+            <img src="image\3.7.7.png" alt=""  class="responsive-img"/>            
+            <figcaption>Hình 3.9.7 Biểu đồ thể hiện mức độ chính xác khi mô hình dự đoán cóhay không có đối tượng trong một ô ở môi trường tối</figcaption>
+          </figure>
+          </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->     
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->                  
+      <!-- Mục 4 -->
+      <div class="accordion" id="muc-5">
+        <div class="accordion-header">Chương 4. Kết luận và hướng phát triển <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này tổng kết lại những gì đã đạt được và chưa đạt được sau khi nghiên cứu và tiến hành đề tài. Từ đó đưa ra kế hoạch nghiên cứu và phát triển tiếp theo trong tương lai.</p1>
+          <h3>4.1. Kết luận</h3>
+          <p class="indent">Trong đề tài này, nhóm đã nghiên cứu và ứng dụng các mô hình hiện đại như YOLOv11 – những mô hình nổi bật trong lĩnh vực phát hiện đối tượng – để phụ vụ cho bài toán phân chia ảnh. Qua quá trình thực hiện, đề tài không chỉ thể hiện tính thực tiễn cao mà còn góp phần thiết thực trong việc hỗ trợ người khiếm thị và người cao tuổi trong sinh hoạt hằng ngày.</p>
+          <p class="indent">Ý nghĩa lớn nhất mà đề tài hướng đến là hỗ trợ nhóm người yếu thế như người khiếm thị và người cao tuổi – những đối tượng gặp nhiều khó khăn trong việc di chuyển độc lập. Bằng việc xây dựng một hệ thống hỗ trợ dựa trên trí tuệ nhân tạo, đề tài đã góp phần tạo ra giải pháp công nghệ giúp họ định hướng, tránh va chạm và di chuyển an toàn hơn trong không gian sống.</p>
+          <p class="indent">Không chỉ dừng lại ở việc giải quyết một bài toán kỹ thuật, đề tài còn mang tính nhân văn sâu sắc. Đây là bước khởi đầu đầy tiềm năng để phát triển các thiết bị thông minh có khả năng hỗ trợ con người trong nhiều tình huống khác nhau, từ sinh hoạt cá nhân đến tham gia giao thông hoặc hoạt động xã hội.</p>
+          <p class="indent">Đề tài không chỉ thể hiện tinh thần sáng thần sáng mà còn khẳng định vai trò thiết yếu của khoa học kỹ thuật trong việc cải thiện chất lượng cuộc sống. Trong tương lai, nhóm mong muốn tiếp tục hoàn hiện và mở rông hệ thống, tích hợp nhiều tính năng thông minh hơn để phục vụ ngày cảng hiệu quả và toàn diện cho cộng đồng người khuyết tật và người cao tuổi.</p>
+          <h3>4.2. Hướng phát triển</h3>
+          <p class="indent">Sản phẩm hỗ trợ người khiếm thị và người cao tuổi tiếp cận cuộc sống hiện đại một cách an toàn và thuận tiện hơn, đặc biệt trong việc định hướng và di chuyển trong môi trường xung quanh.</p>
+          <p class="indent">Giảm thiểu nguy cơ tai nạn do va chạm với vật cản, từ đó nâng cao chất lượng sống và mức độ tự chủ cho người sử dụng.</p>
+          <p class="indent">Có tiềm năng phát triển và triển khai trên quy mô lớn, đặc biệt tại các đô thị, trung tâm chăm sóc sức khỏe hoặc tích hợp vào thiết bị đeo tai thông minh.</p>
+          <p class="indent">Góp phần thúc đẩy việc ứng dụng khoa học kỹ thuật vào đời sống thực tiễn, từ đó mở ra hướng tiếp cận mới trong hỗ trợ y tế và công nghệ hỗ trợ con người.</p>
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->            
+      <!-- Phụ lục -->
+      <h2 style="text-align:center; margin-top:40px;">Video thực hiện</h2>
+      <div class="accordion" id="pl-1">
+        <div class="accordion-header">Video thực hiện code 1<span>▶</span></div>
+        <div class="accordion-content">
+      <figure>
+      <video class="responsive-video" controls>
+        <source src="video\video1.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+        <figcaption>Video mô phỏng hoạt động thực tế</figcaption>
+      </figure>
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->       
+
+      <div class="accordion" id="pl-2">
+        <div class="accordion-header">Video thực hiện code 2<span>▶</span></div>
+        <div class="accordion-content">
+      <figure>
+      <video class="responsive-video" controls>
+        <source src="video\video2.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+        <figcaption>Video mô phỏng hoạt động thực tế</figcaption>
+            </figure>
+                    </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->       
+      <div class="accordion" id="pl-2">
+        <div class="accordion-header">Video mô hình<span>▶</span></div>
+        <div class="accordion-content">
+      <figure>
+      <video class="responsive-video" controls>
+        <source src="video\model.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+        <figcaption>Video quay mô hình</figcaption>
+            </figure>      
+        </div>
+      </div>
+    </main>
+
+  </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->            
+<div class="container">
+  <h2 style="text-align:center; margin-top:40px;">Tài liệu tham khảo</h2>
+  <div class="accordion" id="pl-3">
+    <div class="accordion-header">Tài liệu tham khảo<span>▶</span></div>
+    <div class="accordion-content">
+    <p class="indent">
+    [1] WHO (Tổ chức y tế thế giới), “Thống kê số liệu người bị giảm thị lực trên toàn cầu,” 
+    <a href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment" target="_blank"> https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment </a>
+    </p>
+    <p class="indent">
+    [2] Bộ Y Tế, “Thống kê số liệu người mù lòa,” 
+    <a href=" https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa" target="_blank">  https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa</a>
+    </p>
+    <p class="indent">
+    [3]  UNFPA Vietnam, “Thống kê số liệu người cao tuổi ở Việt Nam (12/2021)”  
+    <a href="https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf" target="_blank">https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf</a>
+    </p>
+    <p class="indent">
+    [4] Bộ Y Tế, “Thống kế số liệu người già ở Việt Nam”,  
+    <a href="https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre" target="_blank">https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre</a>
+    </p>
+    <p class="indent">
+    [5] Moll M, “ Displacement damage in silicon detectors for high energy physics,”,trong báo khoa học “ IEE Transactions on Nuclear Science ( 2018 )”. 
+    </p>
+    <p class="indent">
+    [6] Jan Egger, Christina Gsaxner and Xiaojun Chen, “ Apple Vision Pro for Healthcare: “The Ultimate Display”? – Entering the Wonderlnd of Precision Medicine, August 2023.
+    </p>
+    <p class="indent">
+     [7] Nikita Jain, Pankaj Shivalkar and N. Jaisankar, “ Distance Calculator Using Prim’s Algorithm”, May 2013.
+    </p> 
+    <p class="indent">
+    [8] Parth Kansara, Ritwik Dhar, Riddhi Shah, and Devansh Mehta, “ Heart Rate Measurement”, Jourrnal of Physics Conference Series 1831, March 2021.
+    </p>
+    <p class="indent">
+    [9] Francis Olawale abulude, Akinyinka Akinnusotu and Adewale Adeyemi, “ GLOBAL POSITIONING SYSTEM AND IT’S WIDE APPLICATION”, October 2015.
+    </p> 
+    <p class="indent">
+    [10] Akhilesh Sharma, Vipan Kumar and Louis Longchamps, “ Comparative performance of YOLOv8, YOLOv9, YOLOv10, YOLOv11 and Faster R-CNN models for detection of multipe weed species”, Cornell University, School of Integrative Plant Science, Soil and Crop Sciences Section, Ithaca, Ny, Usa, 10 August 2024.
+    </p>
+    <p class="indent">
+    [11] Math Works. What is Convolutional Neural Network?.   
+    <a href="https://www.mathworks.com/discovery/convolutional-neural-network.html" target="_blank">https://www.mathworks.com/discovery/convolutional-neural-network.html</a>
+    </p>
+    <p class="indent">
+    [12] Garrepalli Gnaneshwari, Goshika Ashritha, Guda Srisaipriya, Dr.B.V Ramana Murthy, “ MULTIPLE OBJECT DETECTION IN IMAGES USING YOLO,” International Journey for Innovative Engineering and Management Research ( 2022).
+    </p>
+    <p class="indent">
+    [13] Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi ( 2015 ). “ You Only Look Once: Unified, Re 	al- Time Object Detection”.
+    </p>
+    <p class="indent">
+    [14] Datahacker.rs (2018). CNN Bounding Box Predictions. 
+    <a href="https://datahacker.rs/deep-learning-bounding-boxes/" target="_blank">https://datahacker.rs/deep-learning-bounding-boxes/</a>
+    </p>
+    <p class="indent">
+    [15]  Nguyễn Đức Thiện, Lư Tất Thắng, Nguyễn Văn Thặng và Trương Quốc Bảo. “NGHIÊN CỨU THUẬT TOÁN THỊ GIÁC MÁY TÍNH ĐỂ THEO DÕI VIỆC THỰC HIỆN CÁC QUY ĐỊNH VỀ PHÒNG NGỪA COVID-19 SỬ DỤNG KỸ THUẬT HỌC SÂU”.
+    </p> 
+    <p class="indent">
+    [16] Mauricio Menegaz (2018). Understanding YOLO. 
+    <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
+    </p>
+    <p class="indent">
+    [17] Datahacker.rs (2018). CNN Bounding Box Predictions.  
+    <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
+    <p class="indent">
+    [18] D. Lu and Q. Weng, “A survey of image classification methods and techniques for improving classification performance,” Int. J. Remote Sens, vol. 28, no. 5, pp. 823–870, 2007.
+    </p>
+    <p class="indent">
+    [19] Rambabu Gupta, “Applying Deep Learning for Classifying Images of Hand Postures in the Rock-Paper-Scissors Game,” 2017.
+    </p>              
+    <p class="indent">
+    [20] Murtadha Ali Majeed and Mohsin Najm Srayyih, “Using neural network for recognition handwritten indian numbers,” Misan Journal of Academic Studies,  vol. 17, no. 33-2, pp. 233-242, 2018.
+    </p>
+    <p class="indent">
+    [21] W. You, C. Shen, D. Wang, L. Chen, X. Jiang and Z. Zhu, “An Intelligent Deep Feature Learning Method With Improved Activation Functions for Machine Fault Diagnosis,” IEEE Access, vol. 8, pp. 1975-1985.
+    </p>
+    <p class="indent">
+    [22] Fonseca Jonseca Joao Antonio Santos Dias, Antonio Baptista, Martins Ma Joao, Joao Paulo Torres, “Distance Measurement Systems Using Lasers and Their Applications”. 
+    </p>
+    <p class="indent">
+    [23] Tao Xu, Wei Shen, Xiaoshan Lin, Yi Min Xie, “Mecahnical Properties of Additively Manufactured Thrmoplastics Polyurthane (TPU) Material Affected By Various Processing Parameters”, December 2020.
+    </p>
+    <p class="indent">
+    [24] Kailaash Devi, “Understanding Hold-Out Methods for Training Machine Learning Models”, August 14, 2023.
+    </p>                                                                                            
+    </div>  
+  </div>
+</div>
+<footer>
+  <p>© 2025 Hệ thống giám sát và hỗ trợ người có vấn đề về mắt và người già</p>
+  <p>Giáo viên hướng dẫn: Thầy Cao Nguyễn Nam Hiền</p>
+  <p>Học sinh thực hiện: Tôn Thất Thanh Tuấn, Ngô Khang Huy Lớp: 11A16 Trường: THPT Phú Nhuận</p>
+</footer>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->       
+  <script>
+    // Sinh mục lục tự động
+    const tocList = document.getElementById('toc-list');
+    document.querySelectorAll('.accordion').forEach((acc) => {
+      const id = acc.id;
+      const headerText = acc.querySelector('.accordion-header').innerText.replace("▶","");
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.textContent = headerText.trim();
+      li.appendChild(a);
+      tocList.appendChild(li);
+      
+    });
+
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        const content = header.nextElementSibling;
+        header.classList.toggle("open");
+        content.classList.toggle("open");
+        content.style.maxHeight = content.classList.contains("open") 
+          ? content.scrollHeight + "px" 
+          : null;
+  });
+});
+</script>
+</body>
+</html>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->     
