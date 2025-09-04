@@ -180,6 +180,34 @@
   width: 100%;
   margin: 20px 0; /* thêm khoảng cách trên/dưới cho cân đối */
 }
+.styled-line {
+  border: none;
+  border-top: 2px dashed #555; /* hoặc solid, dotted */
+  margin: 10px auto;
+  width: 60%; /* ngắn gọn, cân giữa */
+}
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  margin: 15px auto;
+  width: 70%;
+  border-radius: 2px;
+}
+.elegant-line {
+  border: 0;
+  height: 2px; /* dày hơn 1px */
+  background: linear-gradient(to right, transparent, #333, transparent);
+  margin: 25px auto;
+  width: 80%; /* dài hơn chút */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25); /* bóng mờ rõ hơn */
+  border-radius: 2px; /* bo nhẹ để không bị cứng */
+}
+.double-line {
+  border: 0;
+  border-top: 3px double #555;
+  margin: 20px auto;
+  width: 60%;
+}
 
 
 /*=============================================================================*/
@@ -244,6 +272,7 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\1.2.1.png" alt="" class="responsive-img"/>
             <figcaption>Hình 1.2.1 Quy trình hoạt động của mạng YOLO</figcaption>
+            <hr class="elegant-line">
             <img src="image\1.2.2.png" alt="" class="responsive-img"/>
             <figcaption>Hình 1.2.2 Quy trình hoạt động của mạng YOLO</figcaption>
           </figure>
@@ -252,8 +281,10 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\1.3.1.png" alt="" class="responsive-img"/>
             <figcaption>Hình 1.3.1 Hoạt động của YOLO</figcaption>
+            <hr class="elegant-line">
             <img src="image\1.3.2.png" alt="" class="responsive-img"/>
             <figcaption>Hình 1.3.2. Các giá trị tham số của bounding box trong lưới ô</figcaption>
+            <hr class="elegant-line">
             <img src="image\1.3.3.png" alt="" class="responsive-img"/>
             <figcaption>Hình 1.3.3 Hình ảnh cách trích xuất vector đặc trưng của YOLO</figcaption>
           </figure>
@@ -269,8 +300,10 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
             <img src="image\1.5.1.png" alt="" style="width:100px; height:auto;"/>
             <img src="image\1.5.1b.png" alt="" style="width:100px; height:auto; "/>
             <figcaption>Hình 1.5.1 So sánh quy trình phân loại của mô hình phân loại học máy truyền thống với học sâu </figcaption>
+            <hr class="elegant-line">
             <img src="image\1.5.2.png" alt="" style="width:200px; height:auto; display:block; margin-left:auto; margin-right:auto;"/>
             <figcaption>Hình 1.5.2 Các bước phân loại ảnh </figcaption>
+            <hr class="elegant-line">
             <img src="image\1.5.3.png" alt="" class="responsive-img" />
             <figcaption>Hình 1.5.3 Trích xuất đặc trưng và phân loại ảnh với CNN  </figcaption>
           </figure>
@@ -279,6 +312,7 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\1.8.1.jpg" alt="" class="responsive-img" />
             <figcaption>Hình 1.8.1 Mô phỏng việc đo khoảng cách của tia laser </figcaption>
+            <hr class="elegant-line">
             <img src="image\1.8.2.jpg" alt="" class="responsive-img"/>
             <figcaption>Hình 1.8.2 Mô phỏng việc đo khoảng cách của tia laser tới thiết bị</figcaption>
           </figure>          
@@ -304,12 +338,15 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\2.6.1.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 2.6.1 Mẫu thiết kế 1, sử dụng hệ thống sống âm, camera (Góc nhìn ngang)</figcaption>
+            <hr class="elegant-line">
             <img src="image\2.6.2.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 2.6.2 Mẫu thiết kế 1, sử dụng hệ thống sống âm, camera (Góc nhìn thẳng)</figcaption>
+            <hr class="elegant-line">
             <img src="image\2.6.3.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 2.6.3 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên phải)</figcaption>            
+            <figcaption>Hình 2.6.3 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên phải)</figcaption>   
+            <hr class="elegant-line">         
             <img src="image\2.6.4.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 2.6.4 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên trái)</figcaption>               
+            <figcaption>Hình 2.6.4 Mẫu thiết kế 2, sử dụng camera (Góc nhìn bên trái)</figcaption>        
           </figure>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <h3>2.7 Sơ đồ lắp ráp</h3>
@@ -317,6 +354,7 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
             <img src="image\2.7.1a.png" alt=""  class="responsive-img"/>
             <img src="image\2.7.1b.png" alt="" class="responsive-img"/>
             <figcaption>Hình 2.7.1 Sơ đồ lắp ráp camera</figcaption>
+            <hr class="elegant-line">
             <img src="image\2.7.2.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 2.7.2 Sơ đồ lắp ráp laser measurement</figcaption>            
           </figure>          
@@ -335,6 +373,7 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\3.3.1.png" alt="" class="responsive-img"/>
             <figcaption>Hình 3.3.1 Hình ảnh được lưu phân tích vật</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.3.2a.png" alt="" class="responsive-img"/>
             <img src="image\3.3.2b.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.3.2 Hình ảnh miêu tả độ nhận diện của vật</figcaption>
@@ -344,53 +383,76 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
           <figure>
             <img src="image\3.4.1.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 3.4.1 Hình ảnh nhận diện con người thông qua việc train AI</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.4.2.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 3.4.2 Hình ảnh nhận diện con người thông qua việc huấn luyện AI</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.4.3a.png" alt=""  class="responsive-img"/>
             <img src="image\3.4.3b.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 3.4.3 Hình ảnh nhận diện vật được huấn luyện</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.4.4a.png" alt=""  class="responsive-img"/>
             <img src="image\3.4.4b.png" alt=""  class="responsive-img"/>
             <img src="image\3.4.4c.png" alt=""  class="responsive-img"/>
             <figcaption>Hình 3.4.4 Miêu tả đo khoảng cách từ vật tới camera</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.4.5.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 3.4.5 Đo độ sau của ảnh để tính khoảng cách vật</figcaption>
-          </figure>          
+            <figcaption>Hình 3.4.5 Đo độ sâu của ảnh để tính khoảng cách vật</figcaption>
+          </figure> 
+                  <h3>3.5 Đánh giá quá trình ở môi trường ổn định</h3>
+          <figure>
+            <img src="image\3.5.1.png" alt="" class="responsive-img"/>
+            <figcaption>Hình 3.5.1 Chia dữ liệu theo phương pháp Hold-out</figcaption>
+          </figure>
+
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->      
         <h3>3.7. Kết quả thực nghiệm phần nhận diện vật và người ở môi trường ổn định</h3>
           <figure>
             <img src="image\3.7.1.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 3.7.1 Biểu đồ thể hiện hiệu xuất mô hình ở môi trường ổn định</figcaption>
+            <figcaption>Hình 3.7.1 Biểu đồ thể hiện hiệu suất mô hình ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.2.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 3.7.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường ổn định</figcaption>            
+            <figcaption>Hình 3.7.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường ổn định</figcaption>  
+            <hr class="elegant-line">          
             <img src="image\3.7.3.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.7.3 Thống kê độ nhận diện các vật sau khi qua kiểm tra ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.4.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.7.4 Thống kê độ nhận diện các vật sau khi qua kiểm chứng ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.5.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.7.5 Biểu đồ thể hiện độ sai lệch giữa dự đoán và thực tế của vật ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.6.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.7.6 Biểu đồ thể hiện độ sai lệch giữa nhãn phân loại dự đoán và nhãn thực tế của đối tượng  ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.7.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.7.7 Biểu đồ thể hiện mức độ chính xác khi mô hình dự đoán có hay không có đối tượng trong một ô ở môi trường ổn định</figcaption>
+            <hr class="elegant-line">
           </figure>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <h3>3.9 Kết quả thực nghiệm phần nhận diện vật và người ở môi trường tối</h3>
           <figure>
             <img src="image\3.9.1.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 3.9.1 Biểu đồ thể hiện hiệu xuất mô hình ở môi trường tối</figcaption>
+            <figcaption>Hình 3.9.1 Biểu đồ thể hiện hiệu suất mô hình ở môi trường tối</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.9.2.png" alt=""  class="responsive-img"/>
-            <figcaption>Hình 3.9.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường tối</figcaption>            
+            <figcaption>Hình 3.9.2 Biểu đồ rõ hơn sau khi huấn luyện thông qua AI ở môi trường tối</figcaption>
+            <hr class="elegant-line">            
             <img src="image\3.9.3.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.9.3 Thống kê độ nhận diện các vật sau khi qua kiểm tra ở môi trường tối</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.9.4.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.9.4 Thống kê độ nhận diện các vật sau khi qua kiểm chứng ở môi trường tối</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.9.5.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.9.5 Biểu đồ thể hiện độ sai lệch giữa dự đoán và thực tế của vật ở môi trường tối</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.9.6.png" alt=""  class="responsive-img"/>            
             <figcaption>Hình 3.9.6 Biểu đồ thể hiện độ sai lệch giữa nhãn phân loại dự đoán và nhãn thực tế của đối tượng ở môi trường tối</figcaption>
+            <hr class="elegant-line">
             <img src="image\3.7.7.png" alt=""  class="responsive-img"/>            
-            <figcaption>Hình 3.9.7 Biểu đồ thể hiện mức độ chính xác khi mô hình dự đoán cóhay không có đối tượng trong một ô ở môi trường tối</figcaption>
+            <figcaption>Hình 3.9.7 Biểu đồ thể hiện mức độ chính xác khi mô hình dự đoán cóhay không có đối tượng trong một điểm ảnh ở môi trường tối</figcaption>
           </figure>
           </div>
       </div>
@@ -472,99 +534,137 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+   <div class="container">
+<h2 style="text-align:center; margin-top:40px;">Sơ đồ code</h2>
+      <div class="accordion" id="pl-1">
+        <div class="accordion-header">Sơ đồ code cho việc đo khoảng cách<span>▶</span></div>
+        <div class="accordion-content">
+           <figure>
+            <img src="image\chart_main.png" alt="" class="responsive-img"/>
+            <figcaption>Sơ đồ code cho việc đo khoảng cách</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="accordion" id="pl-1">
+        <div class="accordion-header">Sơ đồ code cho việc xác định vật của phương pháp YOLO<span>▶</span></div>
+        <div class="accordion-content">
+           <figure>
+            <img src="image\chart_main_distance_yolo.png" alt="" class="responsive-img"/>
+            <figcaption>Sơ đồ code cho việc xác định vật của phương pháp YOLO</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="accordion" id="pl-1">
+        <div class="accordion-header">Sơ đồ code cho việc xác định vật, huấn luyện và đo khoảng cách vật<span>▶</span></div>
+        <div class="accordion-content">
+           <figure>
+            <img src="image\chart_main_distance_yolo_custom_dataset.png" alt="" class="responsive-img"/>
+            <figcaption>Sơ đồ code cho việc xác định vật, huấn luyện và đo khoảng cách vật</figcaption>
+          </figure>
+        </div>
+      </div>      
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->       
+    </main>
+  </div>      
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->            
-<div class="container">
-  <h2 style="text-align:center; margin-top:40px;">Tài liệu tham khảo</h2>
-  <div class="accordion" id="pl-3">
-    <div class="accordion-header">Tài liệu tham khảo<span>▶</span></div>
-    <div class="accordion-content">
-    <p class="indent">
-    [1] WHO (Tổ chức y tế thế giới), “Thống kê số liệu người bị giảm thị lực trên toàn cầu,” 
-    <a href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment" target="_blank"> https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment </a>
-    </p>
-    <p class="indent">
-    [2] Bộ Y Tế, “Thống kê số liệu người mù lòa,” 
-    <a href=" https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa" target="_blank">  https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa</a>
-    </p>
-    <p class="indent">
-    [3]  UNFPA Vietnam, “Thống kê số liệu người cao tuổi ở Việt Nam (12/2021)”  
-    <a href="https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf" target="_blank">https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf</a>
-    </p>
-    <p class="indent">
-    [4] Bộ Y Tế, “Thống kế số liệu người già ở Việt Nam”,  
-    <a href="https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre" target="_blank">https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre</a>
-    </p>
-    <p class="indent">
-    [5] Moll M, “ Displacement damage in silicon detectors for high energy physics,”,trong báo khoa học “ IEE Transactions on Nuclear Science ( 2018 )”. 
-    </p>
-    <p class="indent">
-    [6] Jan Egger, Christina Gsaxner and Xiaojun Chen, “ Apple Vision Pro for Healthcare: “The Ultimate Display”? – Entering the Wonderlnd of Precision Medicine, August 2023.
-    </p>
-    <p class="indent">
-     [7] Nikita Jain, Pankaj Shivalkar and N. Jaisankar, “ Distance Calculator Using Prim’s Algorithm”, May 2013.
-    </p> 
-    <p class="indent">
-    [8] Parth Kansara, Ritwik Dhar, Riddhi Shah, and Devansh Mehta, “ Heart Rate Measurement”, Jourrnal of Physics Conference Series 1831, March 2021.
-    </p>
-    <p class="indent">
-    [9] Francis Olawale abulude, Akinyinka Akinnusotu and Adewale Adeyemi, “ GLOBAL POSITIONING SYSTEM AND IT’S WIDE APPLICATION”, October 2015.
-    </p> 
-    <p class="indent">
-    [10] Akhilesh Sharma, Vipan Kumar and Louis Longchamps, “ Comparative performance of YOLOv8, YOLOv9, YOLOv10, YOLOv11 and Faster R-CNN models for detection of multipe weed species”, Cornell University, School of Integrative Plant Science, Soil and Crop Sciences Section, Ithaca, Ny, Usa, 10 August 2024.
-    </p>
-    <p class="indent">
-    [11] Math Works. What is Convolutional Neural Network?.   
-    <a href="https://www.mathworks.com/discovery/convolutional-neural-network.html" target="_blank">https://www.mathworks.com/discovery/convolutional-neural-network.html</a>
-    </p>
-    <p class="indent">
-    [12] Garrepalli Gnaneshwari, Goshika Ashritha, Guda Srisaipriya, Dr.B.V Ramana Murthy, “ MULTIPLE OBJECT DETECTION IN IMAGES USING YOLO,” International Journey for Innovative Engineering and Management Research ( 2022).
-    </p>
-    <p class="indent">
-    [13] Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi ( 2015 ). “ You Only Look Once: Unified, Re 	al- Time Object Detection”.
-    </p>
-    <p class="indent">
-    [14] Datahacker.rs (2018). CNN Bounding Box Predictions. 
-    <a href="https://datahacker.rs/deep-learning-bounding-boxes/" target="_blank">https://datahacker.rs/deep-learning-bounding-boxes/</a>
-    </p>
-    <p class="indent">
-    [15]  Nguyễn Đức Thiện, Lư Tất Thắng, Nguyễn Văn Thặng và Trương Quốc Bảo. “NGHIÊN CỨU THUẬT TOÁN THỊ GIÁC MÁY TÍNH ĐỂ THEO DÕI VIỆC THỰC HIỆN CÁC QUY ĐỊNH VỀ PHÒNG NGỪA COVID-19 SỬ DỤNG KỸ THUẬT HỌC SÂU”.
-    </p> 
-    <p class="indent">
-    [16] Mauricio Menegaz (2018). Understanding YOLO. 
-    <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
-    </p>
-    <p class="indent">
-    [17] Datahacker.rs (2018). CNN Bounding Box Predictions.  
-    <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
-    <p class="indent">
-    [18] D. Lu and Q. Weng, “A survey of image classification methods and techniques for improving classification performance,” Int. J. Remote Sens, vol. 28, no. 5, pp. 823–870, 2007.
-    </p>
-    <p class="indent">
-    [19] Rambabu Gupta, “Applying Deep Learning for Classifying Images of Hand Postures in the Rock-Paper-Scissors Game,” 2017.
-    </p>              
-    <p class="indent">
-    [20] Murtadha Ali Majeed and Mohsin Najm Srayyih, “Using neural network for recognition handwritten indian numbers,” Misan Journal of Academic Studies,  vol. 17, no. 33-2, pp. 233-242, 2018.
-    </p>
-    <p class="indent">
-    [21] W. You, C. Shen, D. Wang, L. Chen, X. Jiang and Z. Zhu, “An Intelligent Deep Feature Learning Method With Improved Activation Functions for Machine Fault Diagnosis,” IEEE Access, vol. 8, pp. 1975-1985.
-    </p>
-    <p class="indent">
-    [22] Fonseca Jonseca Joao Antonio Santos Dias, Antonio Baptista, Martins Ma Joao, Joao Paulo Torres, “Distance Measurement Systems Using Lasers and Their Applications”. 
-    </p>
-    <p class="indent">
-    [23] Tao Xu, Wei Shen, Xiaoshan Lin, Yi Min Xie, “Mecahnical Properties of Additively Manufactured Thrmoplastics Polyurthane (TPU) Material Affected By Various Processing Parameters”, December 2020.
-    </p>
-    <p class="indent">
-    [24] Kailaash Devi, “Understanding Hold-Out Methods for Training Machine Learning Models”, August 14, 2023.
-    </p>                                                                                            
-    </div>  
-  </div>
-</div>
-<footer>
-  <p>© 2025 Hệ thống giám sát và hỗ trợ người có vấn đề về mắt và người già</p>
-  <p>Giáo viên hướng dẫn: Thầy Cao Nguyễn Nam Hiền</p>
-  <p>Học sinh thực hiện: Tôn Thất Thanh Tuấn, Ngô Khang Huy Lớp: 11A16 Trường: THPT Phú Nhuận</p>
-</footer>
+    <div class="container">
+      <h2 style="text-align:center; margin-top:40px;">Tài liệu tham khảo</h2>
+      <div class="accordion" id="pl-3">
+        <div class="accordion-header">Tài liệu tham khảo<span>▶</span></div>
+        <div class="accordion-content">
+        <p class="indent">
+        [1] WHO (Tổ chức y tế thế giới), “Thống kê số liệu người bị giảm thị lực trên toàn cầu,” 
+        <a href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment" target="_blank"> https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment </a>
+        </p>
+        <p class="indent">
+        [2] Bộ Y Tế, “Thống kê số liệu người mù lòa,” 
+        <a href=" https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa" target="_blank">  https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/viet-nam-co-khoang-2-trieu-nguoi-mu-loa</a>
+        </p>
+        <p class="indent">
+        [3]  UNFPA Vietnam, “Thống kê số liệu người cao tuổi ở Việt Nam (12/2021)”  
+        <a href="https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf" target="_blank">https://vietnam.unfpa.org/sites/default/files/pubpdf/nguoi_cao_tuoi_vn_report_18.3.pdf</a>
+        </p>
+        <p class="indent">
+        [4] Bộ Y Tế, “Thống kế số liệu người già ở Việt Nam”,  
+        <a href="https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre" target="_blank">https://moh.gov.vn/hoat-dong-cua-dia-phuong/-/asset_publisher/gHbla8vOQDuS/content/trung-binh-nguoi-cao-tuoi-o-viet-nam-mac-nhieu-benh-ket-hop-chi-phi-ieu-tri-cao-gap-8-10-lan-nguoi-tre</a>
+        </p>
+        <p class="indent">
+        [5] Moll M, “ Displacement damage in silicon detectors for high energy physics,”,trong báo khoa học “ IEE Transactions on Nuclear Science ( 2018 )”. 
+        </p>
+        <p class="indent">
+        [6] Jan Egger, Christina Gsaxner and Xiaojun Chen, “ Apple Vision Pro for Healthcare: “The Ultimate Display”? – Entering the Wonderlnd of Precision Medicine, August 2023.
+        </p>
+        <p class="indent">
+        [7] Nikita Jain, Pankaj Shivalkar and N. Jaisankar, “ Distance Calculator Using Prim’s Algorithm”, May 2013.
+        </p> 
+        <p class="indent">
+        [8] Parth Kansara, Ritwik Dhar, Riddhi Shah, and Devansh Mehta, “ Heart Rate Measurement”, Jourrnal of Physics Conference Series 1831, March 2021.
+        </p>
+        <p class="indent">
+        [9] Francis Olawale abulude, Akinyinka Akinnusotu and Adewale Adeyemi, “ GLOBAL POSITIONING SYSTEM AND IT’S WIDE APPLICATION”, October 2015.
+        </p> 
+        <p class="indent">
+        [10] Akhilesh Sharma, Vipan Kumar and Louis Longchamps, “ Comparative performance of YOLOv8, YOLOv9, YOLOv10, YOLOv11 and Faster R-CNN models for detection of multipe weed species”, Cornell University, School of Integrative Plant Science, Soil and Crop Sciences Section, Ithaca, Ny, Usa, 10 August 2024.
+        </p>
+        <p class="indent">
+        [11] Math Works. What is Convolutional Neural Network?.   
+        <a href="https://www.mathworks.com/discovery/convolutional-neural-network.html" target="_blank">https://www.mathworks.com/discovery/convolutional-neural-network.html</a>
+        </p>
+        <p class="indent">
+        [12] Garrepalli Gnaneshwari, Goshika Ashritha, Guda Srisaipriya, Dr.B.V Ramana Murthy, “ MULTIPLE OBJECT DETECTION IN IMAGES USING YOLO,” International Journey for Innovative Engineering and Management Research ( 2022).
+        </p>
+        <p class="indent">
+        [13] Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi ( 2015 ). “ You Only Look Once: Unified, Re 	al- Time Object Detection”.
+        </p>
+        <p class="indent">
+        [14] Datahacker.rs (2018). CNN Bounding Box Predictions. 
+        <a href="https://datahacker.rs/deep-learning-bounding-boxes/" target="_blank">https://datahacker.rs/deep-learning-bounding-boxes/</a>
+        </p>
+        <p class="indent">
+        [15]  Nguyễn Đức Thiện, Lư Tất Thắng, Nguyễn Văn Thặng và Trương Quốc Bảo. “NGHIÊN CỨU THUẬT TOÁN THỊ GIÁC MÁY TÍNH ĐỂ THEO DÕI VIỆC THỰC HIỆN CÁC QUY ĐỊNH VỀ PHÒNG NGỪA COVID-19 SỬ DỤNG KỸ THUẬT HỌC SÂU”.
+        </p> 
+        <p class="indent">
+        [16] Mauricio Menegaz (2018). Understanding YOLO. 
+        <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
+        </p>
+        <p class="indent">
+        [17] Datahacker.rs (2018). CNN Bounding Box Predictions.  
+        <a href="https://hackernoon.com/understanding-yolo-f5a74bbc7967" target="_blank">https://hackernoon.com/understanding-yolo-f5a74bbc7967</a>
+        <p class="indent">
+        [18] D. Lu and Q. Weng, “A survey of image classification methods and techniques for improving classification performance,” Int. J. Remote Sens, vol. 28, no. 5, pp. 823–870, 2007.
+        </p>
+        <p class="indent">
+        [19] Rambabu Gupta, “Applying Deep Learning for Classifying Images of Hand Postures in the Rock-Paper-Scissors Game,” 2017.
+        </p>              
+        <p class="indent">
+        [20] Murtadha Ali Majeed and Mohsin Najm Srayyih, “Using neural network for recognition handwritten indian numbers,” Misan Journal of Academic Studies,  vol. 17, no. 33-2, pp. 233-242, 2018.
+        </p>
+        <p class="indent">
+        [21] W. You, C. Shen, D. Wang, L. Chen, X. Jiang and Z. Zhu, “An Intelligent Deep Feature Learning Method With Improved Activation Functions for Machine Fault Diagnosis,” IEEE Access, vol. 8, pp. 1975-1985.
+        </p>
+        <p class="indent">
+        [22] Fonseca Jonseca Joao Antonio Santos Dias, Antonio Baptista, Martins Ma Joao, Joao Paulo Torres, “Distance Measurement Systems Using Lasers and Their Applications”. 
+        </p>
+        <p class="indent">
+        [23] Tao Xu, Wei Shen, Xiaoshan Lin, Yi Min Xie, “Mecahnical Properties of Additively Manufactured Thrmoplastics Polyurthane (TPU) Material Affected By Various Processing Parameters”, December 2020.
+        </p>
+        <p class="indent">
+        [24] Kailaash Devi, “Understanding Hold-Out Methods for Training Machine Learning Models”, August 14, 2023.
+        </p>                                                                                            
+        </div>  
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 Hệ thống giám sát và hỗ trợ người có vấn đề về mắt và người già</p>
+      <p>Giáo viên hướng dẫn: Thầy Cao Nguyễn Nam Hiền</p>
+      <p>Học sinh thực hiện: Tôn Thất Thanh Tuấn, Ngô Khang Huy Lớp: 11A16 Trường: THPT Phú Nhuận</p>
+    </footer>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->       
@@ -583,19 +683,27 @@ v.v… Những kiến thức cơ bản này là tiền đề để áp dụng v�
       
     });
 
-    document.querySelectorAll(".accordion-header").forEach(header => {
-      header.addEventListener("click", () => {
+    // Accordion toggle
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
         const content = header.nextElementSibling;
-        header.classList.toggle("open");
-        content.classList.toggle("open");
-        content.style.maxHeight = content.classList.contains("open") 
-          ? content.scrollHeight + "px" 
-          : null;
-  });
-});
-</script>
+        const open = content.style.maxHeight;
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          c.style.maxHeight = null; c.classList.remove('open');
+          c.previousElementSibling.classList.remove('open');
+        });
+        if (!open) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('open');
+          header.classList.add('open');
+        }
+      });
+    });
+    
+  </script>
 </body>
 </html>
+
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->     
